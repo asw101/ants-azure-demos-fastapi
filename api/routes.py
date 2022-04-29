@@ -6,6 +6,9 @@ from .database import get_locations, add_location, create_user, authenticate_use
 from .main import app
 from .models import Location, LocationCreate, LoginRequest, UserCreate
 
+@app.get("/", response_model=List[Location])
+async def home() -> List[Location]:
+    return await get_locations()
 
 @app.get("/locations", response_model=List[Location])
 async def list_locations() -> List[Location]:
