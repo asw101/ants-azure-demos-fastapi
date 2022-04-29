@@ -1,4 +1,0 @@
-.venv
-.vscode/settings.json
-db.sqlite3
-*.py[co]
